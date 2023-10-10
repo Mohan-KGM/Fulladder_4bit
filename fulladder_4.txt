@@ -1,0 +1,13 @@
+//verilog code for 4_bit full adder.
+module 4_bit_Add(
+    input [3:0]a,b,
+    input cin,
+    output [3:0]sum,
+    output cout
+    );
+reg [3:0]sum; 
+reg cout;
+ 
+always @ (a or b or cin)
+   assign {cout,sum}= a + b + cin;
+endmodule

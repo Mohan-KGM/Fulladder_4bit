@@ -1,0 +1,20 @@
+// testbench for simulating verilog code
+module testbench_adder;
+    reg a,b,cin;
+    wire sum,cout;
+initial begin
+// Initialize Inputs 
+a = 0; b = 0; cin = 0;
+// Wait 100 ns for global reset to finish
+#100;
+// Add stimulus here 
+#100 a=4; b=9; cin=1; 
+#100 a=15; b=5; cin=1; 
+#100 a=7; b=5; cin=0; 
+#100 a=6; b=10; cin=1; 
+end
+initial begin 
+#100 
+$monitor(“a = %b, b = %b, cin = %b, sum = %b, cout = %b”, a, b, cin, sum, cout); 
+end 
+endmodule
